@@ -1,4 +1,4 @@
-const assert = require('chai').assert;
+const assert = require('../index').assert;
 
 const Plane = require('../Planes/Plane');
 const MilitaryPlane = require('../Planes/MilitaryPlane');
@@ -60,7 +60,7 @@ describe('My Test', () => {
         for (let i = 0; i < planesSortedByMaxLoadCapacity.length - 1; i++) {
             let currentPlane = planesSortedByMaxLoadCapacity[i];
             let nextPlane = planesSortedByMaxLoadCapacity[i + 1];
-            if (currentPlane.getMinLoadCapacity() > nextPlane.getMinLoadCapacity()) {
+            if (currentPlane.getMaxLoadCapacity() > nextPlane.getMaxLoadCapacity()) {
                 nextPlaneMaxLoadCapacityIsHigherThanCurrent = false;
                 break;
             }
